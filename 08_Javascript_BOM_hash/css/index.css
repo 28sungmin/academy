@@ -1,0 +1,66 @@
+/* index.css */
+@charset "utf-8";
+
+main {
+  /* main도 block이라서 width를 안 쓰면 자동으로 100%으로 된다. */
+  height: 400px;
+  background-image: url(../img/main.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  animation: 30s moveBg infinite linear;
+}
+@keyframes moveBg {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+section {
+  padding: 80px 0 60px;
+}
+section .wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+section .wrap .title {
+  border-bottom: 1px solid #777;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  /* 글자의 하단으로 정렬시키겠다는 의미 */
+  align-items: baseline;
+}
+section .wrap .title h3 {
+  font-size: 24px;
+  color: #fff;
+  text-transform: uppercase;
+}
+section .wrap .title a {
+  font-size: 14px;
+  color: #ff7;
+  text-transform: capitalize;
+}
+
+section .wrap .cont {
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* 아래의 calc에서 20px을 뺐기 때문에 -10px을 하면 라인이 맞게 된다. */
+  margin-left: -10px;
+  margin-right: -10px;
+}
+/* >는 없어도 됨 : >를 넣으면 cont 밑에 있는 div들 이라는 의미 */
+section .wrap .cont > div {
+  width: calc(50% - 20px);
+  height: 300px;
+  margin: 0 10px 20px;
+  background-color: #777;
+  background-position: 50% 50%;
+  cursor: pointer;
+}

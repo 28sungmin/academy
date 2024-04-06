@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/* 브라우저의 가로 사이즈가 최대 768px 이하로 조정되었다면 해당하는 스타일을 적용해라 */
+@media (max-width: 768px) {
+  .box1 {
+    width: 100%;
+    background-color: #ffa;
+  }
+}
+
+@media (max-width: 1200px) {
+  .wrap1 {
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .wrap1 div {
+    width: calc(100% / 3 - 20px);
+  }
+  .wrap1 div:last-child {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .wrap1 div {
+    width: calc(50% - 20px);
+  }
+  .wrap1 div:last-child {
+    display: block;
+  }
+}

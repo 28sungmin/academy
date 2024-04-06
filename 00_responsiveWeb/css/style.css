@@ -1,0 +1,118 @@
+/* style.css */
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: #faf;
+  transition: background-color 0.5s, width 0.5s;
+}
+
+.wrap1 {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ccc;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrap1 div {
+  width: calc(25% - 20px);
+  height: 100px;
+  margin: 0 10px 20px;
+  background-color: #adf;
+}
+
+/* min-width를 할 때 작성하는 순서가 매우 중요하다!! */
+.minWidthBox {
+  width: 300px;
+  height: 300px;
+  background-color: #00f;
+}
+/* 최소 가로사이즈가 900px 이상일 때 */
+@media (min-width: 900px) {
+  .minWidthBox {
+    background-color: #ff0;
+  }
+}
+/* 최소 가로사이즈가 1200px 이상일 때 */
+@media (min-width: 1200px) {
+  .minWidthBox {
+    background-color: #f00;
+  }
+}
+
+.maxWidthBox {
+  width: 300px;
+  height: 300px;
+  background-color: #00f;
+}
+@media (max-width: 1200px) {
+  .maxWidthBox {
+    background-color: #f00;
+  }
+}
+@media (max-width: 900px) {
+  .maxWidthBox {
+    background-color: #ff0;
+  }
+}
+
+/* 1200px 이상 < 900px 이상 */
+/* 
+미디어 쿼리의 순서는  
+[ min-width로 선언시 ] 해상도가 작은 영역부터 큰 영역순으로 작성되어야 함
+[ max-width로 선언시 ] 해상도가 큰 영역부터 작은 영역순으로 작성되어야 함
+*/
+
+#menu {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #ffa;
+}
+#menu ul {
+  display: flex;
+}
+#menu ul li {
+  margin: 0 15px;
+}
+#menu ul li a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  background-color: #cdf;
+}
+@media (max-width: 575px) {
+  #menu ul {
+    flex-direction: column;
+  }
+}

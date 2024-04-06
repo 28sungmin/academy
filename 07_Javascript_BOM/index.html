@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07_Javascript_BOM</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h2>
+      BOM - history, navigator, location, screen, 팝업형태(alert, prompt,
+      confirm), setInterval, setTimeout
+    </h2>
+
+    <button id="windowOpen">윈도우 팝업창 불러오기</button>
+
+    <h3>
+      setInterval : 일정시간을 간격으로 함수 내의 실행문을 실행하는 메서드,
+      함수문(function) + 실행문 + 대기시간
+    </h3>
+
+    <p class="interval1">0부터 올라가는 숫자 : <span></span></p>
+    <p class="interval2">10부터 내려가는 숫자 : <span></span></p>
+
+    <h4>이미지 슬라이드(land_01.jpg ~ land_09.jpg)</h4>
+    <div id="imgSlide"></div>
+
+    <h4>실시간 데이터 디지털 타임 적용하기</h4>
+    <p class="curTimes">현재시각 : <span></span></p>
+
+    <h4>
+      예약완료 버튼을 클릭하면 상단에서 "예약이 완료되었습니다." 라는 문구를
+      띄웠다가 일정시간이 지나면 사라지도록 구성
+    </h4>
+    <button class="reservationBtn">예약 완료</button>
+
+    <div class="fixed_box">
+      <p>예약이 완료되었습니다.</p>
+    </div>
+
+    <h3>
+      screen 객체 : 현재 모니터(각 디바이스의 화면 해상도 포함)의 (실효)가로와
+      (실효)세로의 값을 받아옴
+    </h3>
+    <p class="cur_width">현재 스크린의 가로폭 : <span></span></p>
+    <p class="cur_height">현재 스크린의 세로 높이 : <span></span></p>
+
+    <p class="cur_availWidth">현재 스크린의 실효 가로폭 : <span></span></p>
+    <p class="cur_availHeight">현재 스크린의 실효 세로 높이 : <span></span></p>
+
+    <h3>
+      location 객체 : URL 주소창의 내용을 변경 / 정보획득도 가능(http 통신을
+      기반으로 접근)
+    </h3>
+    <h4>location.href : URL 주소창의 내용을 가져올 수도 있고, 변경도 가능</h4>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+
+/*마우스 이동을 통한 이미지 교체*/
+#move1 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+#move1 .origin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/original.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+}
+#move1 .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/copy.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+}
+#move1 .verticalLine {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 1px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 1px #ff0;
+}
+#move1 .verticalLine img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 28px;
+  display: block;
+}
+
+.resize_val_space {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #09f;
+}
+
+/* 전체 대상 이벤트 : scroll 이벤트 */
+#view {
+  padding: 40px 0;
+  background-color: #fdd;
+  margin-bottom: 400px;
+}
+#view .wrap {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ddd;
+  display: flex;
+  padding: 20px 0;
+}
+#view .wrap > div {
+  width: calc(50% - 20px);
+  margin: 0 10px;
+  height: 300px;
+  background-size: cover;
+  background-position: 50% 50%;
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+#view .wrap > div.left_part {
+  background-image: url(../img/environ_news_1.jpg);
+  transform: translateX(-100%);
+}
+#view .wrap > div.right_part {
+  background-image: url(../img/environ_news_2.jpg);
+  transform: translateX(100%);
+}
+#view .wrap > div.left_part.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+#view .wrap > div.right_part.active {
+  transform: translateX(0);
+  opacity: 1;
+}

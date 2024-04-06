@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06_Javascript_event</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>이벤트</h1>
+    <h3>
+      이벤트란, 사용자가 일련의 동작을 수행하는 과정에서 함수문을 호출하여
+      실행시킨 후, 결과로써 피드백을 받는 과정
+    </h3>
+    <p>
+      - 요소 대상 이벤트 : 클릭(click) 이벤트, 마우스(mouse) 이벤트,
+      키보드(keyboard) 이벤트
+    </p>
+    <p>- 전체 대상 이벤트 : load, resize, scroll</p>
+    <p>- form 대상 이벤트 : submit, change</p>
+
+    <h4>이벤트를 진행할 수 있는 함수호출 방법 - 외부스크립트 연동시 포함</h4>
+    <p>1. 태그 내부에 on이벤트명="함수 호출문();"</p>
+    <button onclick="evtFunc1();">이벤트 실행</button>
+    <p>2. (in Javascript) 선택자.on이벤트명 = "함수 호출문"</p>
+    <p>
+      3. (in Javascript) 선택자.addEventListener("이벤트명", function() {...
+      실행문 ...})
+    </p>
+
+    <hr />
+    <h2>요소대상 이벤트 : mouseover & mouseout</h2>
+    <h3>
+      직접 함수 호출하여 이벤트를 구성(함수 호출을 외부스크립트에 작성하지 않음)
+    </h3>
+    <!-- 안 좋은 방법!!! 절대 쓰지 말기!!! -->
+    <img
+      src="./img/boy.png"
+      onmouseover="this.src='./img/girl.png'"
+      onmouseout="this.src='./img/boy.png'"
+      alt="이미지"
+    />
+    <h3>외부스크립트를 활용하여 함수 호출1</h3>
+    <img
+      class="ch_img1"
+      src="./img/tree-1-thumb.jpg"
+      onmouseover="call_ch1();"
+      onmouseout="call_ch2();"
+      alt=""
+    />
+
+    <h3>외부스크립트를 활용하여 함수 호출2</h3>
+    <img class="ch_img2" src="./img/tree-1-thumb.jpg" alt="" />
+
+    <h3>외부스크립트를 활용하여 함수 호출3</h3>
+    <!-- 3번을 주로 쓸거임 -->
+    <img class="ch_img3" src="./img/tree-1-thumb.jpg" alt="" />
+
+    <h2>요소대상 이벤트 : click</h2>
+    <button class="showBtn">이미지 나와라~</button>
+    <div class="showing">
+      <!-- 아래는 없어도 됨 -->
+      <!-- <img src="./img/flower1.jpg" alt=""> -->
+    </div>
+
+    <h3>게임 캐릭터의 진행(소모, 충전)</h3>
+    <div>
+      <button class="move">이동(-5)</button>
+      <button class="add_hp">생명력추가(+10)</button>
+    </div>
+    <p class="cur_state">현재 변경된 상태</p>
+
+    <h3>요소대상 이벤트 : keyboard 이벤트</h3>
+    <p>keydown : 키보드를 눌렀을 때 이벤트가 발생한다.</p>
+    <p>keypress : 키보드를 누른 상태에서 이벤트가 발생한다.</p>
+    <p>keyup : 키보드를 눌렀다가 떼었을 때 이벤트가 발생한다.</p>
+
+    <input type="text" class="input_box" />
+    <p class="search_rst">검색어 : <span class="searching_word"></span></p>
+
+    <h3>요소 대상 이벤트 : mousemove 이벤트</h3>
+    <h4>마우스 이동을 통한 이미지 교체</h4>
+    <section id="move1">
+      <div class="origin"></div>
+      <div class="cover">
+        <div class="verticalLine">
+          <!-- mouseover의 중심이 될 게 아래의 arrow.png -->
+          <img src="./img/arrow.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <h3>전체 대상 이벤트 : resize 이벤트</h3>
+    <p>PC구간 : 1200px 이상</p>
+    <p>tablet구간 - 가로(H) : 992px 이상</p>
+    <p>tablet구간 - 세로(V) : 768px 이상</p>
+    <p>mobile구간 - 가로(H) : 576px 이상</p>
+    <p>mobile구간 - 세로(V) : 576px 미만(min 360px)</p>
+    <div class="resize_val_space">
+      <h4>
+        현재 화면의 가로 사이즈 :
+        <span class="size">000</span>px
+        <span class="deviceName"></span>
+      </h4>
+    </div>
+
+    <h3>전체 대상 이벤트 : scroll 이벤트</h3>
+    <section id="view">
+      <div class="wrap">
+        <div class="left_part"></div>
+        <div class="right_part"></div>
+      </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

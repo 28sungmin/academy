@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 웹</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style_res.css" />
+  </head>
+  <body>
+    <div class="box1"></div>
+
+    <hr />
+    <div class="wrap1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+
+    <p>모바일 - 가로가 시작되는 시점을 767px</p>
+    <p>모바일 - 세로가 시작되는 시점을 576px 미만</p>
+
+    <h3>min-width(최소 가로값 - 이상) VS. max-width(최대 가로값 - 이하)</h3>
+    <div class="minWidthBox">width값을 늘리는 과정</div>
+    <div class="maxWidthBox">width값을 줄이는 과정</div>
+
+    <h3>메뉴 반응형 적용</h3>
+    <p>
+      #1. 펼침 메뉴와 숨김 메뉴를 두 가지 영역으로 별도로 가져가는 경우 :
+      수정사항이 요청시 두 요소를 변경해야 한다.
+    </p>
+    <p>
+      #2. 펼침 메뉴와 숨김 메뉴를 한 가지 영역으로 가져가는 경우 : 수정사항이
+      요청시 한 요소만 변경해도 된다.
+    </p>
+
+    <nav id="menu">
+      <ul>
+        <li><a href="">About</a></li>
+        <li><a href="">Project</a></li>
+        <li><a href="">Portfolio</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

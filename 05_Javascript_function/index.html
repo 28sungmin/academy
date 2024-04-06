@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05_Javascript_function</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>함수의 구성</h1>
+    <h3>버튼을 클릭시, 배열데이터에 저장된 색상을 변경하기(대상은 body)</h3>
+    <button onclick="change_bg();">배경색 변경</button>
+
+    <!-- 매개변수 -->
+    <h3>// 매개변수를 활용한 회원명단 출력</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>아이디</th>
+          <th>이메일</th>
+        </tr>
+      </thead>
+      <tbody id="mem_result">
+        <tr>
+          <td>가나다</td>
+          <td>gnd111</td>
+          <td>gnd111@gmail.com</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>매개변수를 활용한 환경사진 화면에 뿌려주기</h3>
+    <div class="photoCover">
+      <div class="photo">
+        <div class="photoImg"></div>
+        <h4>환경 사진0</h4>
+      </div>
+      <div class="photo">
+        <div class="photoImg"></div>
+        <h4>환경 사진0</h4>
+      </div>
+    </div>
+
+    <!-- 전역변수, 지역변수 -->
+    <!-- return 문 -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
