@@ -1,0 +1,30 @@
+/* sub_res.css */
+@charset "utf-8";
+
+@media (max-width: 1199px) {
+  section .wrap {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+/* 태블릿 적용 */
+@media (max-width: 991px) {
+  main {
+    height: 250px;
+  }
+  section .wrap .cont div {
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 767px) {
+  main {
+    height: 200px;
+  }
+  section {
+    padding: 50px 0 30px;
+  }
+  section .wrap .cont div {
+    width: calc(100% - 20px);
+    height: 200px;
+  }
+}

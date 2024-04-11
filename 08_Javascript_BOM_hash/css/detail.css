@@ -39,3 +39,20 @@ section .wrap p {
   color: #ccc;
   font-size: 15px;
 }
+
+.history {
+  padding-bottom: 80px;
+  text-align: center;
+}
+.history button {
+  width: 120px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #fb0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.history button:hover {
+  background-color: #d90;
+}

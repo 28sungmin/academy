@@ -43,6 +43,10 @@ hash_apply();
 var $list = document.querySelectorAll("header .wrap nav ul li");
 console.log($list); // NodeList(3) [li, li, li]
 
+var $body = document.querySelector("body"); // .showMenu를 집어넣을 거임
+var $resBtn = document.querySelector(".resBtn"); // .active
+var $nav = document.querySelector("header nav"); // .active
+
 // const 예약어를 사용하게 되면 요소의 위치를 확실하게 고정시킬 수 있음
 // <-> var 예약어는 변경되는 성향을 가진다. var를 하면 어떤 메뉴를 눌러도 puma가 찍힌다.
 // let도 괜찮으나 여기서는 되도록 const를 써줘라
@@ -56,5 +60,11 @@ for (const v of $list) {
     console.log($hash_txt);
     // 상단의 선언된 함수를 호출
     hash_apply();
+
+    // 반응형의 경우, sub.html 페이지에서 각 브랜드별 메뉴 클릭시,
+    // 페이지의 데이터를 받으면서 메뉴를 닫아준다.
+    $body.classList.remove("showMenu");
+    $resBtn.classList.remove("active");
+    $nav.classList.remove("active");
   });
 }

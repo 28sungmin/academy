@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09_Javascript_DOM_2</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h2>근거리 선택자</h2>
+    <h3>parentNode : 부모의 요소를 선택</h3>
+    <div class="parent_selector">
+      <p>HTML5</p>
+      <p class="children">CSS3</p>
+      <p>Javascript</p>
+    </div>
+
+    <h3>
+      childNodes : 자식을 찾아서 선택(문서상의 엔터 영역도 자식으로 인정 -
+      (빈)노드 인정)
+    </h3>
+    <ul class="childNodes_selector">
+      <li>About</li>
+      <li>Project</li>
+      <li>Portfolio</li>
+      <li>Contact</li>
+    </ul>
+
+    <h3>children : 자식을 찾아서 선택(실제 유효한 자식만 선택)</h3>
+    <ul class="children_selector">
+      <li>회사소개</li>
+      <li>경영소개</li>
+      <li>제품소개</li>
+      <li>고객센터</li>
+    </ul>
+
+    <h3>closest() : 가장 가까운 조상을 탐색하여 선택하겠다는 메서드</h3>
+    <nav class="menu">
+      <ul>
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+      </ul>
+      <ul class="menu">
+        <li>
+          <a href="">회사소개</a>
+          <ul>
+            <li>회사연혁</li>
+            <li>오시는길</li>
+          </ul>
+        </li>
+        <li>
+          <a href="">경영소개</a>
+          <ul>
+            <li><a class="start_target" href="">CEO 인사말</a></li>
+            <li><a href="">경영비전</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <h3>첫번째 자식(firstChild) / 마지막 자식(lastChild)</h3>
+    <h3>이전 형제(previousSibling) / 다음 형제(nextSibling)</h3>
+    <div class="child_group">
+      <p class="first">첫째</p>
+      <p>둘째</p>
+      <p>셋째</p>
+      <p class="last">넷째</p>
+    </div>
+
+    <hr />
+
+    <h2>DOM에서 요소를 생성하고 지정한 장소에 하위로 위치시키기</h2>
+    <div class="createElement_appendChild">
+      <p>기준</p>
+    </div>
+
+    <h3>
+      배열 데이터 ["red", "orange", "yellow", "green", "blue"]가 존재하여 지정된
+      하단의 공간에 차례대로 내부의 자식으로 넣기
+    </h3>
+    <div class="color_box">
+      <!-- <p>색상</p>
+        <p>색상</p>
+        <p>색상</p>
+        <p>색상</p>
+        <p>색상</p> -->
+    </div>
+
+    <h4>
+      [ 실습 ] 001-hamster.png ~ 007-sandbox.png를 배열 데이터에 넣고 하단의
+      구성에 차례대로 표현하기
+    </h4>
+    <div class="imageBox">
+      <!-- <img src="이미지파일" alt="파일명 중에서 이미지 이름(예시 : hamster)" /> -->
+    </div>
+
+    <h3>append()와 prepend()</h3>
+    <p>append() : 맨 마지막 자식을 추가한다(기준은 부모)</p>
+    <p>prepend() : 맨 처음 자식을 추가한다(기준은 부모)</p>
+
+    <div class="addChild_first_last">
+      <!-- prepend 결과 위치 -->
+      <p>오렌지</p>
+      <p>옐로우</p>
+      <p>그린</p>
+      <!-- append 결과 위치 -->
+    </div>
+
+    <p class="mySchedule">4. 복습하기</p>
+
+    <div class="addLastChild">
+      <p>1. 등교하기</p>
+      <p>2. 공부하기</p>
+      <p>3. 하교하기</p>
+    </div>
+
+    <h4>문서 객체 이동시키기 - appendChild() VS. append()의 공통점과 차이점</h4>
+    <div id="appendChild_append">
+      <div class="compare_appendChild">
+        <h4>1-1. 타이틀</h4>
+        <p>1-2. 문단 위치</p>
+      </div>
+      <div class="compare_append">
+        <h4>2-1. 타이틀</h4>
+        <p>2-2. 문단 위치</p>
+      </div>
+    </div>
+
+    <h3>
+      "다음"이라는 버튼을 클릭했을 때, 맨 첫번째 이미지를 마지막 이미지 위치로
+      이동시키기 (append() 이용)
+    </h3>
+    <div class="nextBtn">
+      <button>다음</button>
+    </div>
+    <div class="petBox1">
+      <img src="./img/001-hamster.png" alt="" />
+      <img src="./img/002-turtle.png" alt="" />
+      <img src="./img/003-cat.png" alt="" />
+      <img src="./img/004-dog.png" alt="" />
+      <img src="./img/005-bird.png" alt="" />
+      <img src="./img/006-fish.png" alt="" />
+      <img src="./img/007-sandbox.png" alt="" />
+    </div>
+
+    <h3>
+      "이전"이라는 버튼을 클릭했을 때, 마지막 이미지를 첫 번째 이미지 위치로
+      이동시키기 (prepend() 이용)
+    </h3>
+    <div class="prevBtn">
+      <button>이전</button>
+    </div>
+    <div class="petBox2">
+      <img src="./img/001-hamster.png" alt="" />
+      <img src="./img/002-turtle.png" alt="" />
+      <img src="./img/003-cat.png" alt="" />
+      <img src="./img/004-dog.png" alt="" />
+      <img src="./img/005-bird.png" alt="" />
+      <img src="./img/006-fish.png" alt="" />
+      <img src="./img/007-sandbox.png" alt="" />
+    </div>
+
+    <h3>
+      setInterval을 활용하여 전체적으로 우측 이미지가 좌측 공간으로 하나씩
+      교체되는 과정을 구성 (append() 이용) 단, 시간은 2000ms
+    </h3>
+    <div class="petBox3">
+      <img src="./img/001-hamster.png" alt="" />
+      <img src="./img/002-turtle.png" alt="" />
+      <img src="./img/003-cat.png" alt="" />
+      <img src="./img/004-dog.png" alt="" />
+      <img src="./img/005-bird.png" alt="" />
+      <img src="./img/006-fish.png" alt="" />
+      <img src="./img/007-sandbox.png" alt="" />
+    </div>
+
+    <h3>이미지 슬라이드(자동 이미지 슬라이드 + 모션 + 양방향 화살표 클릭)</h3>
+    <div id="slider_box">
+      <div class="slider">
+        <div class="slide slide1">
+          <h3>타이틀1</h3>
+          <p>배너 설명1</p>
+          <div>
+            <button>바로가기1</button>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <h3>타이틀2</h3>
+          <p>배너 설명2</p>
+          <div>
+            <button>바로가기2</button>
+          </div>
+        </div>
+        <div class="slide slide3">
+          <h3>타이틀3</h3>
+          <p>배너 설명3</p>
+          <div>
+            <button>바로가기3</button>
+          </div>
+        </div>
+        <div class="slide slide4">
+          <h3>타이틀4</h3>
+          <p>배너 설명4</p>
+          <div>
+            <button>바로가기4</button>
+          </div>
+        </div>
+        <div class="slide slide5">
+          <h3>타이틀5</h3>
+          <p>배너 설명5</p>
+          <div>
+            <button>바로가기5</button>
+          </div>
+        </div>
+      </div>
+      <div class="arrow">
+        <a href="" class="arrow_prev">
+          <img src="./img/prev_arrow.svg" alt="이전 버튼" />
+        </a>
+        <a href="" class="arrow_next">
+          <img src="./img/next_arrow.svg" alt="다음 버튼" />
+        </a>
+      </div>
+    </div>
+
+    <h4>removeChild : 기존에 존재하는 하위의 자식을 제거한다.</h4>
+    <div class="removeChild_method">
+      <p>영국</p>
+      <p>프랑스</p>
+      <p>호주</p>
+      <p>중국</p>
+    </div>
+
+    <h3>
+      [실습] 버튼을 클릭시 하나씩 제거되도록 스크립트를 구현(순서는 위에서부터
+      제거 또는 맨 아래부터 제거)
+    </h3>
+    <button class="del_btn">리스트 항목을 순차적으로 제거</button>
+    <div class="color_group">
+      <p>RED</p>
+      <p>ORANGE</p>
+      <p>YELLOW</p>
+      <p>GREEN</p>
+      <p>BLUE</p>
+    </div>
+
+    <h2>
+      To Do List : 입력 값을 넣고 엔터 또는 버튼 클릭간 리스트를 생성(append())
+      + "×" 버튼 클릭시 해당하는 리스트만 삭제
+    </h2>
+    <section id="todoList_cover">
+      <div class="input_line">
+        <input type="text" id="todo" name="todo" />
+        <button id="addBtn">등록</button>
+      </div>
+      <div id="todo_list">
+        <!-- <div class="list">
+          <p>할일 목록</p>
+          <span class="remove">×</span>
+        </div> -->
+      </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
